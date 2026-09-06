@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
-import pytest
-from src.CalcDebts import CalcDebts
+from Types import DataType
 
-def test_count_debtors():
-    data = {
-        "Иванов Иван": [("математика", 80), ("литература", 59)],
-        "Петров Петр": [("математика", 100), ("физика", 90)],
-        "Сидоров Сидор": [("химия", 60), ("биология", 55)]
-    }
-    calc = CalcDebts(data)
-    assert calc.count_debtors() == 2
+
+class CalcDebts:
+    def __init__(self, data: DataType) -> None:
+        self.data = data
+
+    def count_debtors(self) -> int:
+        count = 0
+        for student, subjects in self.data.items():
+            if any(score < 61 for _, score in subjects):
+                count += 1
+        return count
