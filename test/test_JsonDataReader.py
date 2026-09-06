@@ -14,7 +14,9 @@ def test_json_data_reader_simple():
         }
     }
 
-    with tempfile.NamedTemporaryFile(delete=False, mode="w", encoding="utf-8") as tmp:
+    with tempfile.NamedTemporaryFile(
+        delete=False, mode="w", encoding="utf-8"
+    ) as tmp:
         json.dump(data, tmp)
         tmp_path = tmp.name
 
@@ -24,8 +26,12 @@ def test_json_data_reader_simple():
     os.remove(tmp_path)
 
     assert "Иванов Иван" in result
-    assert ("математика", 80) in result["Иванов Иван"]
-    assert ("литература", 59) in result["Иванов Иван"]
+    assert ("математика", 80) in result[
+        "Иванов Иван"
+    ]
+    assert ("литература", 59) in result[
+        "Иванов Иван"
+    ]
 
 
 def test_json_data_reader_multiple_students():
@@ -34,7 +40,9 @@ def test_json_data_reader_multiple_students():
         "Сидоров Сидор": {"химия": 90}
     }
 
-    with tempfile.NamedTemporaryFile(delete=False, mode="w", encoding="utf-8") as tmp:
+    with tempfile.NamedTemporaryFile(
+        delete=False, mode="w", encoding="utf-8"
+    ) as tmp:
         json.dump(data, tmp)
         tmp_path = tmp.name
 
@@ -43,5 +51,9 @@ def test_json_data_reader_multiple_students():
 
     os.remove(tmp_path)
 
-    assert ("физика", 70) in result["Петров Пётр"]
-    assert ("химия", 90) in result["Сидоров Сидор"]
+    assert ("физика", 70) in result[
+        "Петров Пётр"
+    ]
+    assert ("химия", 90) in result[
+        "Сидоров Сидор"
+    ]
