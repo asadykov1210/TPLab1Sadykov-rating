@@ -45,7 +45,8 @@
 
 Диаграмма классов проекта представлена ниже:
 
-<img width="857" height="428" alt="bLFDYXD14BxtKpHxCI6Eu3N4iE2UP1TaZQSb39tftZZi_0pTDOk32aaEUiZ5dBs8Jp0InJ7--0ezh-2JM3sPs3C9H9n09bNTzTNtVLKvLS0af650m8T0qASNvxzdA_r95phNwtA6tz_narFz2uEV-hFUb0iCJqQFpzda_XF6ivlurf4C_6XwGiWT-g1wgFwW2wnPrZ7n0gOKFMF0HbaYw6" src="https://github.com/user-attachments/assets/bbcdebda-19ab-4db8-846c-91043593b8fd" />
+<img width="605" height="493" alt="Снимок экрана 2026-09-07 205537" src="https://github.com/user-attachments/assets/79322027-eaf3-41a8-b5ed-9a7ff046391c" />
+
 
 
 ---
