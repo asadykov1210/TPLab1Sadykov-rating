@@ -9,7 +9,7 @@ from src.Types import DataType
 class TestJsonDataReader:
     @pytest.fixture()
     def valid_json_content(self) -> tuple[str, DataType]:
-        """Возвращает строку с валидным JSON и ожидаемый словарь данных."""
+        """Возвращает строку с валидным JSON и ожидаемый словарь."""
         json_string = """
         {
             "Иванов Иван Иванович": {
@@ -50,8 +50,10 @@ class TestJsonDataReader:
         assert result == expected_data
 
     def test_read_invalid_json(self, tmp_path):
-        """Проверяет, что при некорректном JSON выбрасывается JSONDecodeError."""
-        invalid_json = '{"Иванов Иван": {"математика": 80, "литература": 59}'
+        """Проверяет выброс JSONDecodeError при некорректном JSON."""
+        invalid_json = (
+            '{"Иванов Иван": {"математика": 80, "литература": 59}'
+        )
         file_path = tmp_path / "invalid.json"
         file_path.write_text(invalid_json, encoding="utf-8")
 
