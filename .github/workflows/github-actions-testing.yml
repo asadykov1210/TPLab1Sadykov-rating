@@ -16,25 +16,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-
+          
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest pycodestyle
-          # Указываем полный путь к requirements.txt, так как он внутри папки
           if [ -f TPLab1Sadykov/rating/requirements.txt ]; then pip install -r TPLab1Sadykov/rating/requirements.txt; fi
-
+          
       - name: Lint with pycodestyle
         working-directory: ./TPLab1Sadykov/rating
         run: |
           pycodestyle src test
-
+          
       - name: Test with pytest
         working-directory: ./TPLab1Sadykov/rating
         run: |
-          PYTHONPATH=./src pytest test
+          python -m pytest test
